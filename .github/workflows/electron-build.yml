@@ -14,10 +14,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3  # Checkout source code
+      uses: actions/checkout@v4  # Checkout source code
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '20'  # Ganti dengan versi Node.js yang kamu gunakan
 
@@ -28,7 +28,7 @@ jobs:
       run: npm run build  # Jalankan perintah build (electron-builder)
 
     - name: Upload .exe build as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: app-exe
         path: dist/**/*    # Menyimpan semua file yang ada di dalam folder dist, tempat output build
